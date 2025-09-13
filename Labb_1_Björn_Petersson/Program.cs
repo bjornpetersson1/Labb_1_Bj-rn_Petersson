@@ -19,12 +19,12 @@ static bool IsNoLetterBetweenDigits(int firstIndex, int lastIndex, string usrStr
     return true;
 }
 
-static string RedNumbersSeperated(int firstIndex, int lastIndex, string usrString)
+static string RedStringNumberSeperated(int firstIndex, int lastIndex, string usrString)
 {
     string result = usrString.Substring(firstIndex, lastIndex - firstIndex+1);
     return result;
 }
-static string[] GrayNumbersSeperated(int firstIndex, int lastIndex, string usrString)
+static string[] GrayStringNumbersSeperated(int firstIndex, int lastIndex, string usrString)
 {
     string[] results = new string[2];
     results[0] = usrString.Remove(firstIndex);
@@ -44,10 +44,10 @@ static void PrintResults(string usrString)
         else if (IsNoLetterBetweenDigits(firstAndLastIndexes[0], firstAndLastIndexes[1], usrString))
         {
             coloredNumUlong.Add(0);
-            string redStringNumber = RedNumbersSeperated(firstAndLastIndexes[0], firstAndLastIndexes[1], usrString);
+            string redStringNumber = RedStringNumberSeperated(firstAndLastIndexes[0], firstAndLastIndexes[1], usrString);
             coloredNumUlong[ColoredNumListIndex] = ulong.Parse(redStringNumber);
             ColoredNumListIndex++;
-            string[] grayNumbers = GrayNumbersSeperated(firstAndLastIndexes[0], firstAndLastIndexes[1], usrString);
+            string[] grayNumbers = GrayStringNumbersSeperated(firstAndLastIndexes[0], firstAndLastIndexes[1], usrString);
 
             Console.ForegroundColor = ConsoleColor.Gray;
             Console.Write(grayNumbers[0]);
